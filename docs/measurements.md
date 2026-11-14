@@ -56,7 +56,7 @@ Prima di passare alla fase CAD, verificare scrupolosamente i seguenti tre cancel
 |---|---|---|---|---|
 | **A1** | Larghezza piastra in alto | `PLATE_W_TOP` | 98 | Subito sotto le alette, da spigolo a spigolo |
 | **A2** | Larghezza piastra in basso | `PLATE_W_BOTTOM` | 90 | Lungo il bordo inferiore. A1 ≠ A2: la piastra si stringe verso il basso di 8 mm, come nella foto |
-| **A3** | Quale lato è inclinato | `SIDE_TAPER` | entrambi (da confermare) | Dalla foto raddrizzata (era ruotata di ~1,5°) i lati sono simmetrici, ~4 mm per lato (~2,2°). Per confermare: `sinistro`, `destro` o `entrambi`: appoggia una squadra sul bordo inferiore e guarda quale lato se ne stacca |
+| **A3** | Quale lato è inclinato | `SIDE_TAPER` | entrambi | Confermato con la squadra: i lati si stringono in modo simmetrico, 4 mm per lato su 105 mm (~2,2°) |
 | **B** | Altezza piastra (escluse alette) | `PLATE_H` | 105 | Lungo il lato dritto, dal bordo inferiore al bordo superiore |
 | **C** | Spessore nominale cartoncino | `PLATE_T` | 1.5 | Misurato su bordo non schiacciato (sarà lo spessore piastra) |
 | **D** | Larghezza scanalatura a U | `U_W` | 45 | Larghezza dell'apertura a U sul bordo superiore. Ricontrollato col calibro: vale più della foto (~42) |
