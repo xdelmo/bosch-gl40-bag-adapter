@@ -68,14 +68,14 @@
 
 | Lettera | Cosa | Costante |
 |---|---|---|
-| A | larghezza piastra | `PLATE_W` |
+| A1 / A2 / A3 | larghezza piastra in alto e in basso, lato inclinato | `PLATE_W_TOP`, `PLATE_W_BOTTOM`, `SIDE_TAPER` |
 | B | altezza piastra (senza alette) | `PLATE_H` |
 | C | spessore cartoncino | `PLATE_T` |
 | D | larghezza scanalatura a U | `U_W` |
 | E | profondità U dal bordo superiore | `U_DEPTH` |
 | F | larghezza aletta / G altezza aletta sopra il bordo | `TAB_W`, `TAB_H` |
 | H | distanza bordo esterno → aletta | `TAB_X_INSET` |
-| I, J | tacca: profondità, altezza dal bordo superiore | `NOTCH_D`, `NOTCH_Z` |
+| I, J | tacca laterale: assente sull'originale (confermato dall'utente), nessuna costante | — |
 | K | diametro foro nel cartoncino | `HOLE_D` |
 | L, M | centro foro: da bordo sinistro, da bordo inferiore | `HOLE_X_FROM_LEFT`, `HOLE_Y_FROM_BOTTOM` |
 | N | diametro esterno bocchettone | `INLET_D` |
@@ -115,8 +115,14 @@ def test_plate_thickness():
 
 def test_plate_outline():
     bb = create_trial_plate().bounding_box()
-    assert abs(bb.size.X - PLATE_W) < 0.05
+    assert abs(bb.size.X - max(PLATE_W_TOP, PLATE_W_BOTTOM)) < 0.05
     assert abs(bb.size.Y - (PLATE_H + TAB_H)) < 0.05
+    # la piastra può stringersi verso il basso: larghezza misurata 0.5 mm sopra il bordo inferiore
+    y = bb.min.Y + 0.5
+    xs = [bb.min.X + i * 0.1 for i in range(int(bb.size.X / 0.1) + 1)]
+    p = create_trial_plate()
+    inside = [x for x in xs if p.is_inside((x, y, PLATE_T / 2))]
+    assert abs((max(inside) - min(inside)) - PLATE_W_BOTTOM) < 0.3
 
 def test_hole_through_and_sized():
     p = create_trial_plate()

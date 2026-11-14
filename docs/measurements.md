@@ -54,19 +54,21 @@ Prima di passare alla fase CAD, verificare scrupolosamente i seguenti tre cancel
 
 | Lettera | Cosa | Costante | Valore (mm) | Note |
 |---|---|---|---|---|
-| **A** | Larghezza totale piastra | `PLATE_W` | | Larghezza della piastra nel corpo principale |
-| **B** | Altezza piastra (escluse alette) | `PLATE_H` | | Dal bordo inferiore al bordo superiore orizzontale |
+| **A1** | Larghezza piastra in alto | `PLATE_W_TOP` | 98 | Subito sotto le alette, da spigolo a spigolo |
+| **A2** | Larghezza piastra in basso | `PLATE_W_BOTTOM` | 90 | Lungo il bordo inferiore. A1 ≠ A2: la piastra si stringe verso il basso di 8 mm, come nella foto |
+| **A3** | Quale lato è inclinato | `SIDE_TAPER` | entrambi (da confermare) | Dalla foto raddrizzata (era ruotata di ~1,5°) i lati sono simmetrici, ~4 mm per lato (~2,2°). Per confermare: `sinistro`, `destro` o `entrambi`: appoggia una squadra sul bordo inferiore e guarda quale lato se ne stacca |
+| **B** | Altezza piastra (escluse alette) | `PLATE_H` | | Lungo il lato dritto, dal bordo inferiore al bordo superiore |
 | **C** | Spessore nominale cartoncino | `PLATE_T` | | Misurato su bordo non schiacciato (sarà lo spessore piastra) |
-| **D** | Larghezza scanalatura a U | `U_W` | | Larghezza dell'apertura a U sul bordo superiore |
+| **D** | Larghezza scanalatura a U | `U_W` | 45 | Larghezza dell'apertura a U sul bordo superiore |
 | **E** | Profondità scanalatura a U | `U_DEPTH` | | Distanza dal bordo superiore al punto più basso della U |
-| **F** | Larghezza singola aletta | `TAB_W` | | Larghezza dell'aletta superiore |
-| **G** | Altezza aletta sopra il bordo | `TAB_H` | | Sporgenza verticale dell'aletta oltre il bordo superiore |
+| **F** | Larghezza singola aletta | `TAB_W` | 12 | Larghezza dell'aletta superiore |
+| **G** | Altezza aletta sopra il bordo | `TAB_H` | 3 | Sporgenza verticale dell'aletta oltre il bordo superiore |
 | **H** | Distanza bordo esterno → aletta | `TAB_X_INSET` | | Rientro dell'aletta rispetto allo spigolo laterale |
-| **I** | Profondità tacca laterale | `NOTCH_D` | | Profondità dell'intaglio/scalino laterale |
-| **J** | Posizione tacca dal bordo sup. | `NOTCH_Z` | | Distanza verticale tra bordo superiore e inizio tacca |
-| **K** | Diametro foro aspirazione | `HOLE_D` | | Diametro interno del foro nel cartoncino |
-| **L** | Centro foro da bordo sinistro | `HOLE_X_FROM_LEFT` | | Distanza orizzontale bordo sinistro → asse foro |
-| **M** | Centro foro da bordo inferiore | `HOLE_Y_FROM_BOTTOM` | | Distanza verticale bordo inferiore → asse foro |
+| **I** | Profondità tacca laterale | `NOTCH_D` | — (assente) | Il cartoncino originale non ha tacche laterali (confermato dall'utente) |
+| **J** | Posizione tacca dal bordo sup. | `NOTCH_Z` | — (assente) | Il cartoncino originale non ha tacche laterali (confermato dall'utente) |
+| **K** | Diametro foro aspirazione | `HOLE_D` | 50 | Diametro interno del foro nel cartoncino |
+| **L** | Centro foro da bordo sinistro | `HOLE_X_FROM_LEFT` | | Distanza orizzontale bordo sinistro → asse foro, misurata all'altezza del foro (il lato può essere inclinato) |
+| **M** | Centro foro da bordo inferiore | `HOLE_Y_FROM_BOTTOM` | 40 | Distanza verticale bordo inferiore → asse foro |
 | **N** | Diametro esterno bocchettone | `INLET_D` | | Diametro esterno del tubo di aspirazione macchina |
 | **O** | Bocchettone entra nel foro? | `INLET_ENTERS` / `INLET_DEPTH` | | `sì` (indicare mm penetrazione) oppure `no` (battuta piana) |
 | **P** | Profondità libera dietro piastra | `DEPTH_FREE` | | **CANCELLO CRITICO**: se < 20 mm stop immediato |
