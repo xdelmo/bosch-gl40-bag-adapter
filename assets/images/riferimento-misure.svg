@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 920" width="1260" height="920" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Arrow markers -->
+    <marker id="arrow-blue-end" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-blue-start" markerWidth="8" markerHeight="8" refX="1" refY="4" orient="auto">
+      <path d="M 8 0 L 0 4 L 8 8 z" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-red-end" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-green-end" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#059669" />
+    </marker>
+    <marker id="arrow-purple-end" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#7c3aed" />
+    </marker>
+
+    <!-- Hatch pattern for keep-out -->
+    <pattern id="hatch-green" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#10b981" stroke-width="2" stroke-opacity="0.4" />
+    </pattern>
+    <!-- Hatch pattern for vacuum cavity -->
+    <pattern id="hatch-gray" width="12" height="12" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#94a3b8" stroke-width="1.5" stroke-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <!-- ==================== HEADER ==================== -->
+  <rect x="20" y="16" width="1220" height="66" rx="8" fill="#0f172a" />
+  <text x="40" y="44" fill="#f8fafc" font-size="20" font-weight="700" letter-spacing="0.5">BOSCH GL-40 (Hair Animal) — SCHEMA DI RIFERIMENTO MISURE E QUOTE CAD</text>
+  <text x="40" y="66" fill="#94a3b8" font-size="13">Origine (0, 0): Centro foro bocchettone | Asse +X: verso destra | Asse +Y: verso la scanalatura a U e le alette | Asse +Z: verso il retro (vano sacchetto)</text>
+
+  <!-- ==================== PANNELLO SINISTRO: VISTA FRONTALE ==================== -->
+  <rect x="20" y="96" width="670" height="804" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+  <rect x="20" y="96" width="670" height="38" rx="8" fill="#1e293b" />
+  <rect x="20" y="126" width="670" height="8" fill="#1e293b" />
+  <text x="36" y="121" fill="#f8fafc" font-size="15" font-weight="700">VISTA FRONTALE — Faccia Anteriore Z=0 (Superficie a contatto con piatto / motore)</text>
+
+  <!-- Sfondo disegno piastra -->
+  <!-- Dimensioni piastra nel disegno:
+       Bordo inferiore: Y=630, da X=190 a X=510 (larghezza = 320 px)
+       Bordo superiore principale: Y=270, da X=190 a X=510 (altezza principale = 360 px)
+       Tacca sinistra: Y=310, profondita 8 px (X da 190 a 198)
+       Tacca destra: Y=310, profondita 8 px (X da 510 a 502)
+       Aletta sinistra: da X=210 a X=255 (larghezza 45 px, inset H=20 px), altezza G=30 px (da Y=270 a Y=240)
+       Aletta destra: da X=445 a X=490 (larghezza 45 px, inset H=20 px), altezza G=30 px (da Y=270 a Y=240)
+       Scanalatura a U: centro X=350, larghezza D=110 px (da X=295 a X=405), profondita E=70 px (da Y=270 a Y=340)
+       Foro centrale: centro (350, 470), diametro K=120 px (raggio 60 px)
+  -->
+
+  <!-- Sagoma piastra cartoncino -->
+  <path d="
+    M 190 630
+    L 510 630
+    L 510 325
+    L 502 325
+    L 502 310
+    L 510 310
+    L 510 270
+    L 490 270
+    L 490 250
+    L 480 240
+    L 455 240
+    L 445 250
+    L 445 270
+    L 405 270
+    L 405 295
+    A 55 45 0 0 1 295 295
+    L 295 270
+    L 255 270
+    L 255 250
+    L 245 240
+    L 220 240
+    L 210 250
+    L 210 270
+    L 190 270
+    L 190 310
+    L 198 310
+    L 198 325
+    L 190 325
+    Z
+  " fill="#e2e8f0" stroke="#334155" stroke-width="2.5" stroke-linejoin="round" />
+
+  <!-- Foro centrale cartoncino (HOLE_D = K) -->
+  <circle cx="350" cy="470" r="60" fill="#ffffff" stroke="#334155" stroke-width="2.5" />
+
+  <!-- Membrana originale in gomma (MEMBRANE_OD = T) -->
+  <circle cx="350" cy="470" r="76" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6 4" />
+
+  <!-- Bocchettone aspirapolvere indicativo (INLET_D = N) -->
+  <circle cx="350" cy="470" r="54" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="4 3" />
+
+  <!-- Assi di coordinate cartesiane sull'origine foro -->
+  <!-- Linea asse orizzontale tratto-punto -->
+  <line x1="160" y1="470" x2="540" y2="470" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="14 4 3 4" opacity="0.6" />
+  <!-- Linea asse verticale tratto-punto -->
+  <line x1="350" y1="215" x2="350" y2="655" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="14 4 3 4" opacity="0.6" />
+
+  <!-- Vettori +X e +Y centrati su (0,0) -->
+  <line x1="350" y1="470" x2="445" y2="470" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red-end)" />
+  <line x1="350" y1="470" x2="350" y2="375" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red-end)" />
+  <circle cx="350" cy="470" r="4.5" fill="#dc2626" />
+  <text x="358" y="462" fill="#dc2626" font-size="12" font-weight="700">Origine (0, 0)</text>
+  <text x="448" y="465" fill="#dc2626" font-size="13" font-weight="700">+X</text>
+  <text x="356" y="375" fill="#dc2626" font-size="13" font-weight="700">+Y</text>
+
+  <!-- Esempio Zona Keep-out Q (Clip / Linguetta di sicurezza) -->
+  <rect x="230" y="525" width="75" height="60" rx="3" fill="url(#hatch-green)" stroke="#059669" stroke-width="2" stroke-dasharray="5 3" />
+  <text x="235" y="555" fill="#047857" font-size="11" font-weight="700">Q: KEEPOUT</text>
+  <text x="235" y="570" fill="#047857" font-size="9.5">[x0, y0, x1, y1]</text>
+
+  <!-- LINEE DI QUOTA E LETTERE (VISTA FRONTALE) -->
+
+  <!-- Quota A: Larghezza piastra (PLATE_W) -->
+  <line x1="190" y1="630" x2="190" y2="705" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="510" y1="630" x2="510" y2="705" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="198" y1="695" x2="502" y2="695" stroke="#0284c7" stroke-width="2" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="305" y="682" width="90" height="26" rx="4" fill="#0284c7" />
+  <text x="350" y="700" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">A: PLATE_W</text>
+
+  <!-- Quota B: Altezza piastra senza alette (PLATE_H) -->
+  <line x1="190" y1="630" x2="80" y2="630" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="190" y1="270" x2="80" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="90" y1="622" x2="90" y2="278" stroke="#0284c7" stroke-width="2" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="47" y="437" width="86" height="26" rx="4" fill="#0284c7" />
+  <text x="90" y="455" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">B: PLATE_H</text>
+
+  <!-- Quota D: Larghezza scanalatura U (U_W) -->
+  <line x1="295" y1="270" x2="295" y2="215" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="405" y1="270" x2="405" y2="215" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="303" y1="225" x2="397" y2="225" stroke="#0284c7" stroke-width="2" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="318" y="212" width="64" height="24" rx="4" fill="#0284c7" />
+  <text x="350" y="229" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">D: U_W</text>
+
+  <!-- Quota E: Profondita U dal bordo superiore (U_DEPTH) -->
+  <line x1="405" y1="340" x2="440" y2="340" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="405" y1="270" x2="440" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="430" y1="278" x2="430" y2="332" stroke="#0284c7" stroke-width="2" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="382" y="297" width="96" height="22" rx="4" fill="#0284c7" />
+  <text x="430" y="313" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">E: U_DEPTH</text>
+
+  <!-- Quota F: Larghezza aletta (TAB_W) & G: Altezza aletta (TAB_H) -->
+  <!-- Quota F su aletta sinistra -->
+  <line x1="210" y1="240" x2="210" y2="185" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="255" y1="240" x2="255" y2="185" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="218" y1="195" x2="247" y2="195" stroke="#0284c7" stroke-width="2" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="195" y="157" width="75" height="24" rx="4" fill="#0284c7" />
+  <text x="232" y="174" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">F: TAB_W</text>
+
+  <!-- Quota G: Altezza aletta sopra il bordo (su aletta sinistra) -->
+  <line x1="255" y1="240" x2="285" y2="240" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="255" y1="270" x2="285" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="275" y1="246" x2="275" y2="264" stroke="#0284c7" stroke-width="1.8" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="236" y="278" width="75" height="22" rx="4" fill="#0284c7" />
+  <text x="273" y="294" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">G: TAB_H</text>
+
+  <!-- Quota H: Rientro bordo esterno -> aletta (TAB_X_INSET) -->
+  <line x1="190" y1="270" x2="190" y2="215" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="210" y1="250" x2="210" y2="215" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="193" y1="225" x2="207" y2="225" stroke="#0284c7" stroke-width="1.6" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="142" y="225" width="46" height="22" rx="4" fill="#0284c7" />
+  <text x="165" y="241" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">H</text>
+
+  <!-- Quota I e J: Tacca laterale -->
+  <!-- J: Posizione tacca dal bordo superiore -->
+  <line x1="190" y1="270" x2="140" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="198" y1="310" x2="140" y2="310" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="150" y1="278" x2="150" y2="302" stroke="#0284c7" stroke-width="1.8" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="95" y="280" width="48" height="22" rx="4" fill="#0284c7" />
+  <text x="119" y="296" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">J</text>
+  <!-- I: Profondità tacca -->
+  <line x1="160" y1="318" x2="190" y2="318" stroke="#0284c7" stroke-width="1.8" marker-end="url(#arrow-blue-end)" />
+  <rect x="128" y="322" width="60" height="22" rx="4" fill="#0284c7" />
+  <text x="158" y="338" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">I: NOTCH</text>
+
+  <!-- Quota K: Diametro foro nel cartoncino (HOLE_D) -->
+  <line x1="392" y1="428" x2="475" y2="345" stroke="#0284c7" stroke-width="2" marker-start="url(#arrow-blue-start)" />
+  <rect x="475" y="333" width="98" height="24" rx="4" fill="#0284c7" />
+  <text x="524" y="350" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">Ø K: HOLE_D</text>
+
+  <!-- Quota T: Membrana originale (MEMBRANE_OD) -->
+  <line x1="404" y1="524" x2="480" y2="600" stroke="#7c3aed" stroke-width="1.8" stroke-dasharray="3 2" marker-start="url(#arrow-purple-end)" />
+  <rect x="475" y="590" width="128" height="24" rx="4" fill="#7c3aed" />
+  <text x="539" y="607" fill="#ffffff" font-size="11.5" font-weight="700" text-anchor="middle">Ø T: MEMBRANE_OD</text>
+
+  <!-- Quota N: Bocchettone aspirapolvere (INLET_D) -->
+  <line x1="312" y1="508" x2="250" y2="640" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 2" marker-start="url(#arrow-blue-start)" />
+  <rect x="200" y="640" width="102" height="24" rx="4" fill="#d97706" />
+  <text x="251" y="657" fill="#ffffff" font-size="11.5" font-weight="700" text-anchor="middle">Ø N: INLET_D</text>
+
+  <!-- Quota L: Centro foro da bordo sinistro (HOLE_X_FROM_LEFT) -->
+  <line x1="190" y1="630" x2="190" y2="765" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="350" y1="630" x2="350" y2="765" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="198" y1="755" x2="342" y2="755" stroke="#0284c7" stroke-width="2" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="205" y="742" width="130" height="24" rx="4" fill="#0284c7" />
+  <text x="270" y="759" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">L: HOLE_X_FROM_LEFT</text>
+
+  <!-- Quota M: Centro foro da bordo inferiore (HOLE_Y_FROM_BOTTOM) -->
+  <line x1="510" y1="630" x2="575" y2="630" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="410" y1="470" x2="575" y2="470" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="565" y1="622" x2="565" y2="478" stroke="#0284c7" stroke-width="2" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)" />
+  <rect x="500" y="538" width="130" height="24" rx="4" fill="#0284c7" />
+  <text x="565" y="555" fill="#ffffff" font-size="10.5" font-weight="700" text-anchor="middle">M: HOLE_Y_BOTTOM</text>
+
+  <!-- Guida rapida coordinate vista frontale -->
+  <rect x="36" y="820" width="638" height="64" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+  <text x="48" y="842" fill="#0f172a" font-size="12" font-weight="700">Riferimento Coordinate (da CLAUDE.md):</text>
+  <text x="48" y="860" fill="#475569" font-size="11.5">• Origine (0,0) esattamente al centro del foro di aspirazione K. Piastra centrata o scostata secondo L e M.</text>
+  <text x="48" y="874" fill="#475569" font-size="11.5">• Le quote Q (keep-outs di clip e fermi) vanno espresse come [x0, y0, x1, y1] rispetto a questa origine (0,0).</text>
+
+
+  <!-- ==================== PANNELLO DESTRO SUPERIORE: VISTA LATERALE ==================== -->
+  <rect x="710" y="96" width="530" height="350" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+  <rect x="710" y="96" width="530" height="38" rx="8" fill="#1e293b" />
+  <rect x="710" y="126" width="530" height="8" fill="#1e293b" />
+  <text x="726" y="121" fill="#f8fafc" font-size="15" font-weight="700">VISTA LATERALE / SEZIONE Z (Profondità vano e spessori)</text>
+
+  <!-- Schema sezione:
+       Bocchettone a sinistra: X da 740 a 790
+       Faccia anteriore piastra (Z=0): X=790
+       Piastra (spessore C = PLATE_T): X da 790 a 812 (spessore 22 px)
+       Faccia posteriore piastra: X=812
+       Vano libero posteriore (P = DEPTH_FREE): X da 812 a 980
+       Parete di fondo vano aspirapolvere: X=980
+  -->
+
+  <!-- Parete di fondo del vano aspirapolvere -->
+  <rect x="980" y="155" width="20" height="210" fill="url(#hatch-gray)" stroke="#64748b" stroke-width="1.5" />
+  <line x1="980" y1="155" x2="980" y2="365" stroke="#475569" stroke-width="2.5" />
+  <text x="970" y="150" fill="#64748b" font-size="11" font-weight="600" text-anchor="end">Parete fondo vano</text>
+
+  <!-- Area volume libero vano (P) -->
+  <rect x="812" y="165" width="168" height="190" fill="#ecfdf5" stroke="#10b981" stroke-width="1" stroke-dasharray="4 4" opacity="0.7" />
+
+  <!-- Sezione Piastra Cartoncino -->
+  <rect x="790" y="165" width="22" height="190" fill="#cbd5e1" stroke="#334155" stroke-width="2" />
+  <!-- Foro di passaggio aria al centro della piastra (altezza foro Y) -->
+  <rect x="790" y="235" width="22" height="50" fill="#ffffff" stroke="#334155" stroke-dasharray="3 2" />
+
+  <!-- Bocchettone aspirapolvere in avvicinamento -->
+  <path d="M 730 240 L 785 240 L 785 280 L 730 280" fill="none" stroke="#d97706" stroke-width="2.5" />
+  <text x="730" y="232" fill="#d97706" font-size="11" font-weight="700">Bocchettone</text>
+
+  <!-- Possibile penetrazione nel foro (Quota O: INLET_DEPTH) -->
+  <rect x="785" y="243" width="18" height="34" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2" />
+  <line x1="790" y1="298" x2="803" y2="298" stroke="#d97706" stroke-width="1.8" marker-end="url(#arrow-blue-end)" />
+  <rect x="735" y="302" width="98" height="22" rx="4" fill="#d97706" />
+  <text x="784" y="317" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">O: INLET_DEPTH</text>
+
+  <!-- Asse di riferimento Z -->
+  <line x1="780" y1="155" x2="780" y2="375" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6" />
+  <line x1="790" y1="190" x2="890" y2="190" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red-end)" />
+  <text x="792" y="182" fill="#dc2626" font-size="11" font-weight="700">Z=0 (Piatto/Motore)</text>
+  <text x="895" y="194" fill="#dc2626" font-size="12" font-weight="700">+Z (verso sacchetto)</text>
+
+  <!-- Quota C: Spessore cartoncino (PLATE_T) -->
+  <line x1="790" y1="355" x2="790" y2="400" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="812" y1="355" x2="812" y2="400" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="784" y1="390" x2="818" y2="390" stroke="#0284c7" stroke-width="1.6" />
+  <rect x="758" y="405" width="86" height="22" rx="4" fill="#0284c7" />
+  <text x="801" y="420" fill="#ffffff" font-size="10.5" font-weight="700" text-anchor="middle">C: PLATE_T</text>
+
+  <!-- Quota P: Profondita libera vano (DEPTH_FREE) -->
+  <line x1="812" y1="215" x2="812" y2="255" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="980" y1="215" x2="980" y2="255" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="820" y1="225" x2="972" y2="225" stroke="#059669" stroke-width="2.5" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-green-end)" />
+  <rect x="835" y="212" width="124" height="26" rx="4" fill="#059669" />
+  <text x="897" y="230" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">P: DEPTH_FREE</text>
+
+  <!-- Box Avviso Cancello P -->
+  <rect x="830" y="250" width="135" height="42" rx="4" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5" />
+  <text x="897" y="267" fill="#b91c1c" font-size="11" font-weight="700" text-anchor="middle">CANCELLO P</text>
+  <text x="897" y="282" fill="#b91c1c" font-size="10.5" font-weight="600" text-anchor="middle">Se P &lt; 20 mm → STOP!</text>
+
+
+  <!-- ==================== PANNELLO DESTRO INFERIORE: LEGENDA E CANCELLI ==================== -->
+  <rect x="710" y="460" width="530" height="440" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+  <rect x="710" y="460" width="530" height="38" rx="8" fill="#1e293b" />
+  <rect x="710" y="490" width="530" height="8" fill="#1e293b" />
+  <text x="726" y="485" fill="#f8fafc" font-size="15" font-weight="700">LEGENDA QUOTE E CANCELLI DECISIONALI</text>
+
+  <!-- Tabella riassuntiva lettere A-Q -->
+  <g transform="translate(725, 510)" font-size="11.5">
+    <!-- Colonna sinistra quote geometriche -->
+    <text x="0" y="16" fill="#0f172a" font-weight="700">Quote sagoma piastra (mm):</text>
+    <text x="0" y="34" fill="#334155"><tspan font-weight="700" fill="#0284c7">A</tspan> = Larghezza corpo piastra (<tspan font-family="monospace">PLATE_W</tspan>)</text>
+    <text x="0" y="50" fill="#334155"><tspan font-weight="700" fill="#0284c7">B</tspan> = Altezza corpo senza alette (<tspan font-family="monospace">PLATE_H</tspan>)</text>
+    <text x="0" y="66" fill="#334155"><tspan font-weight="700" fill="#0284c7">C</tspan> = Spessore cartoncino (<tspan font-family="monospace">PLATE_T</tspan>)</text>
+    <text x="0" y="82" fill="#334155"><tspan font-weight="700" fill="#0284c7">D</tspan> = Larghezza scanalatura U (<tspan font-family="monospace">U_W</tspan>)</text>
+    <text x="0" y="98" fill="#334155"><tspan font-weight="700" fill="#0284c7">E</tspan> = Profondità U da bordo sup. (<tspan font-family="monospace">U_DEPTH</tspan>)</text>
+    <text x="0" y="114" fill="#334155"><tspan font-weight="700" fill="#0284c7">F</tspan> = Larghezza aletta (<tspan font-family="monospace">TAB_W</tspan>)</text>
+    <text x="0" y="130" fill="#334155"><tspan font-weight="700" fill="#0284c7">G</tspan> = Altezza aletta sopra bordo (<tspan font-family="monospace">TAB_H</tspan>)</text>
+    <text x="0" y="146" fill="#334155"><tspan font-weight="700" fill="#0284c7">H</tspan> = Rientro bordo-aletta (<tspan font-family="monospace">TAB_X_INSET</tspan>)</text>
+    <text x="0" y="162" fill="#334155"><tspan font-weight="700" fill="#0284c7">I, J</tspan> = Tacca: prof., dist. bordo sup. (<tspan font-family="monospace">NOTCH_D, Z</tspan>)</text>
+
+    <!-- Colonna destra foratura e accoppiamento -->
+    <text x="260" y="16" fill="#0f172a" font-weight="700">Foro, tenuta e sacchetto:</text>
+    <text x="260" y="34" fill="#334155"><tspan font-weight="700" fill="#0284c7">K</tspan> = Diametro foro piastra (<tspan font-family="monospace">HOLE_D</tspan>)</text>
+    <text x="260" y="50" fill="#334155"><tspan font-weight="700" fill="#0284c7">L, M</tspan> = Centro foro da sx e basso (<tspan font-family="monospace">HOLE_X, Y</tspan>)</text>
+    <text x="260" y="66" fill="#334155"><tspan font-weight="700" fill="#d97706">N</tspan> = Diametro est. bocchettone (<tspan font-family="monospace">INLET_D</tspan>)</text>
+    <text x="260" y="82" fill="#334155"><tspan font-weight="700" fill="#d97706">O</tspan> = Entrata bocchettone (sì/no, mm)</text>
+    <text x="260" y="98" fill="#334155"><tspan font-weight="700" fill="#059669">P</tspan> = Spazio libero dietro (<tspan font-family="monospace">DEPTH_FREE</tspan>)</text>
+    <text x="260" y="114" fill="#334155"><tspan font-weight="700" fill="#059669">Q</tspan> = Keep-out clip/blocco (<tspan font-family="monospace">KEEPOUTS</tspan>)</text>
+    <text x="260" y="130" fill="#334155"><tspan font-weight="700" fill="#7c3aed">T, U</tspan> = Membrana originale: OD, spessore</text>
+    <text x="260" y="146" fill="#334155"><tspan font-weight="700" fill="#334155">V</tspan> = Spessore carta 4 strati (<tspan font-family="monospace">PAPER_STACK</tspan>)</text>
+    <text x="260" y="162" fill="#334155"><tspan font-weight="700" fill="#334155">W</tspan> = Spessore espanso adesivo (<tspan font-family="monospace">FOAM_T</tspan>)</text>
+  </g>
+
+  <!-- Box Tre Cancelli Decisionali -->
+  <g transform="translate(725, 695)">
+    <!-- Cancello P -->
+    <rect x="0" y="0" width="500" height="54" rx="5" fill="#fef2f2" stroke="#ef4444" stroke-width="1.2" />
+    <text x="12" y="20" fill="#991b1b" font-size="12" font-weight="700">🛑 CANCELLO P (Profondità Vano — DEPTH_FREE):</text>
+    <text x="12" y="38" fill="#7f1d1d" font-size="11">Misurare con calibro di profondità. Se P &lt; 20 mm: STOP IMMEDIATO prima del CAD.</text>
+
+    <!-- Cancello O -->
+    <rect x="0" y="62" width="500" height="54" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2" />
+    <text x="12" y="82" fill="#92400e" font-size="12" font-weight="700">⚠️ CANCELLO O (Penetrazione Bocchettone — INLET_ENTERS):</text>
+    <text x="12" y="100" fill="#78350f" font-size="11">Se entra nel foro: definire quota penetrazione prima del Task 3 per recesso nel manicotto.</text>
+
+    <!-- Cancello S -->
+    <rect x="0" y="124" width="500" height="54" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2" />
+    <text x="12" y="144" fill="#1e40af" font-size="12" font-weight="700">ℹ️ CANCELLO S (Linguetta di Sicurezza — INTERLOCK_PUSH):</text>
+    <text x="12" y="162" fill="#1e3a8a" font-size="11">Se la piastra deve premere la linguetta per chiudere il coperchio: definire battuta e corsa.</text>
+  </g>
+
+</svg>
