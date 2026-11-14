@@ -11,14 +11,19 @@ Il sistema è composto da:
 Il progetto utilizza `build123d` per la generazione CAD parametrica e Bambu Studio per lo slicing:
 
 ```bash
-# Esecuzione pipeline completa (CAD -> STEP/STL -> 3MF Bambu Studio -> Patch PETG)
-./build.sh full
-
-# Generazione stampa di prova (solo profilo sottile per verificare guide, clip e chiusura vano)
+# Generazione stampa di prova (default, solo profilo sottile piastra per verifica guide/clip nel vano)
 ./build.sh trial
+# oppure semplicemente:
+./build.sh
 
 # Esecuzione controlli geometrici e tolleranze FDM
 .venv/bin/python -m pytest checks/check_fit.py
+
+# Generazione CAD isolata (STEP e STL in output/ senza slicer)
+.venv/bin/python src/generate_adapter.py
+
+# Esecuzione pipeline completa (disponibile dopo il rilevamento delle quote vano)
+./build.sh full
 ```
 
 ## Misure & Parametri

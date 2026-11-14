@@ -9,10 +9,10 @@ Progetto CAD parametrico basato su Python (`build123d`) che genera un adattatore
 Tutti i comandi vanno eseguiti dalla radice del repository:
 
 ```bash
-# Esecuzione pipeline completa (CAD -> STEP/STL -> 3MF Bambu Studio -> Patch PETG)
+# Pipeline completa (CAD -> STEP/STL -> 3MF Bambu Studio -> Patch PETG): per ora esce con errore, mancano le misure del vano
 ./build.sh full
 
-# Generazione stampa di prova (solo profilo sottile piastra per verifica guide/clip nel vano)
+# Stampa di prova (default): solo il profilo della piastra (create_trial_plate) -> output/trial_plate.{step,stl,3mf}
 ./build.sh trial
 
 # Esecuzione controlli geometrici e tolleranze FDM
