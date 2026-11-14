@@ -60,10 +60,10 @@ Prima di passare alla fase CAD, verificare scrupolosamente i seguenti tre cancel
 | **B** | Altezza piastra (escluse alette) | `PLATE_H` | | Lungo il lato dritto, dal bordo inferiore al bordo superiore |
 | **C** | Spessore nominale cartoncino | `PLATE_T` | 1.5 | Misurato su bordo non schiacciato (sarà lo spessore piastra) |
 | **D** | Larghezza scanalatura a U | `U_W` | 45 | Larghezza dell'apertura a U sul bordo superiore |
-| **E** | Profondità scanalatura a U | `U_DEPTH` | | Distanza dal bordo superiore al punto più basso della U |
+| **E** | Profondità scanalatura a U | `U_DEPTH` | 22 | Distanza dal bordo superiore al punto più basso della U |
 | **F** | Larghezza singola aletta | `TAB_W` | 12 | Larghezza dell'aletta superiore |
 | **G** | Altezza aletta sopra il bordo | `TAB_H` | 3 | Sporgenza verticale dell'aletta oltre il bordo superiore |
-| **H** | Distanza bordo esterno → aletta | `TAB_X_INSET` | | Rientro dell'aletta rispetto allo spigolo laterale |
+| **H** | Distanza bordo esterno → aletta | `TAB_X_INSET` | 6.5 | Rientro dell'aletta rispetto allo spigolo laterale |
 | **I** | Profondità tacca laterale | `NOTCH_D` | — (assente) | Il cartoncino originale non ha tacche laterali (confermato dall'utente) |
 | **J** | Posizione tacca dal bordo sup. | `NOTCH_Z` | — (assente) | Il cartoncino originale non ha tacche laterali (confermato dall'utente) |
 | **K** | Diametro foro aspirazione | `HOLE_D` | 50 | Diametro interno del foro nel cartoncino |
